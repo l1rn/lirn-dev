@@ -25,7 +25,7 @@ function Header() {
                 </div>
                 <div className='header-border'>
                     <Button onClick={toggleTheme}>
-                        { dark ? <Moon color='white'  /> : <Sun size={24}/> }
+                        { dark ? <Sun size={24} color='#f8fafc'/> : <Moon size={24}  /> }
                     </Button>
                 </div>
             </div>
