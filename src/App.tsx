@@ -1,13 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+
+import './App.scss'
+
+import { ThemeProvider } from './ThemeProvider';
+import Header from './components/Header';
+import Body from './components/Body';
 
 function App() {
   return (
     <>
-	<h2>lirn-dev in progress...</h2>
+      <ThemeProvider>
+        <Header></Header>
+        <Body></Body>
+      </ThemeProvider>
     </>
   )
 }

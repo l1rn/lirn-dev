@@ -1,0 +1,27 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.body-wrapper {
+    @include flex-center;
+    width: 100%;
+    .body-container {
+        width: 90%;
+        max-width: 800px;
+        .body-title {
+            @include flex-center;
+            font-weight: 900;
+            font-size: 64px;
+        }
+        .body-links {
+            ul {
+                display: flex;
+                flex-direction: column;
+                text-decoration: none;
+                gap: 10px;
+                li {
+                    list-style: none;
+                }
+            }
+        }
+    }
+}
