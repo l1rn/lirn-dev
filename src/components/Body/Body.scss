@@ -9,7 +9,7 @@
         flex-direction: column;
         width: 90%;
         max-width: 800px;
-        min-height: 90vh;
+        min-height: 88vh;
         .body-title {
             @include flex-center;
             font-weight: 900;
@@ -17,6 +17,7 @@
         }
         .body-subtitle {
             @include flex-center;
+            text-align: center;
             font-size: 32px;
         }
         .line-separation {
