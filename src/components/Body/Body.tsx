@@ -3,7 +3,7 @@ import { FaGithub, FaEnvelope, FaLinkedinIn } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 import Button from '../Button';
 import { useTheme } from '../../ThemeProvider';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function SubTitleItem( { 
     text_main, text_addition, className, specificSign, isSmall 
@@ -28,6 +28,9 @@ function SubTitleItem( {
 function Body() {
     const { dark } = useTheme();
     const [isSmall, setIsSmall] = useState(false);
+    const handleSendMail = () => {
+	window.location.href = `mailto:ivtaks06@gmail.com`
+    };
     useEffect(() => {
         const media = window.matchMedia("(max-width: 768px)");
 
@@ -81,7 +84,7 @@ function Body() {
                             </li>
                             <li>
                                 <Button>
-                                    <FaEnvelope size={32} color={dark ? "#f8fafc" : "#0f172a"} />
+                                    <FaEnvelope onClick={handleSendMail} size={32} color={dark ? "#f8fafc" : "#0f172a"} />
                                 </Button>
                             </li>
                         </ul>
