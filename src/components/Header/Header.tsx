@@ -2,7 +2,7 @@ import './Header.scss';
 import { useTheme } from "../../ThemeProvider";
 import Button from "../Button"
 import { FaCloudflare } from "react-icons/fa";
-import { Sun, Moon } from 'lucide-react'
+import { Sun, Moon, FolderBookmark } from 'lucide-react'
 
 function Header() {
     const { dark, toggleTheme } = useTheme();
@@ -13,12 +13,24 @@ function Header() {
                     <div className='header-item'>
                         <Button 
                         variant='secondary'
-                        onClick={() => window.open('https://ubuntu.lirn-dev.ru/', "_blank", "noopener,noreferrer")}>
+                        onClick={() => window.open('https://ubuntu.l1rn.org/', "_blank", "noopener,noreferrer")}>
                             <span className='header-span'>
-                                <FaCloudflare size={24}/>
+                                <FaCloudflare size={20}/>
                             </span>
                             <span className='header-text'>
                                 Cloudflare
+                            </span>
+                        </Button>
+                    </div>
+                    <div className='header-item'>
+                        <Button
+                        variant='secondary'
+                        onClick={() => window.open('https://projects.l1rn.org/', "_blank", "noopener,noreferrer")}>
+                            <span className='header-span'>
+                                <FolderBookmark size={20}/>
+                            </span>
+                            <span className='header-text'>
+                                Projects
                             </span>
                         </Button>
                     </div>
