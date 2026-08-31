@@ -2,6 +2,7 @@ import './Body.scss'
 import { FaGithub, FaEnvelope, FaLinkedinIn } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 import Button from '../Button';
+import SideMenu from '../SideMenu';
 import { useTheme } from '../../ThemeProvider';
 import { useEffect, useState } from 'react';
 
@@ -45,6 +46,8 @@ function Body() {
 
     return (
         <>
+            <SideMenu></SideMenu>
+
             <div className="body-wrapper">
                 <div className="body-container">
                     <div className='body-title'>
@@ -60,10 +63,10 @@ function Body() {
 
                     <div className="line-separation"></div>
 
-                        <div className="body-bio">
-                            Building scalable web apps and backend systems with modern tools.
-                            Interesting in Linux and Network systems
-                        </div>
+                    <div className="body-bio">
+                        Building scalable web apps and backend systems with modern tools.
+                        Interesting in Linux and Network systems
+                    </div>
 
                     <div className="body-links">
                         <ul>

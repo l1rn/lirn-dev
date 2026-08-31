@@ -9,3 +9,9 @@
     justify-content: flex-end;
     align-items: center;
 }
+
+@mixin button-clear{
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+}

@@ -1,0 +1,51 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+$border-width: 1.5px;
+
+.side-menu-wrapper {
+  position: relative;
+}
+
+.side-menu-container {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 101;
+  transform: translateY(-50%);
+transition: transform 0.5s ease;
+
+  .side-menu-button {
+    @include button-clear;
+    @include flex-center;
+    padding: 1rem 0.5rem;
+    border-radius: 0 8px 8px 0;
+    border: $border-width solid $dark-grey;
+    cursor: pointer;
+
+    span.icon {
+      display: inline-flex;
+
+      svg {
+        display: block;
+        transition: transform 0.5s ease;
+
+        transform: scaleX(1);
+      }
+    }
+
+    &.active {
+      span.icon {
+        svg {
+          transform: scaleX(-1);
+        }
+      }
+    }
+  }
+}
+
+.side-menu-wrapper.active {
+  .side-menu-container {
+    transform: translate(350px, -50%);
+  }
+}
