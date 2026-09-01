@@ -3,7 +3,7 @@ import { FaGithub, FaEnvelope, FaLinkedinIn } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 import Button from '../Button';
 import SideMenu from '../SideMenu';
-import { useTheme } from '../../ThemeProvider';
+import { useTheme } from '../../ThemeContext';
 import { useEffect, useState } from 'react';
 
 function SubTitleItem( { 
@@ -27,7 +27,7 @@ function SubTitleItem( {
 }
 
 function Body() {
-    const { dark } = useTheme();
+    const { theme } = useTheme();
     const [isSmall, setIsSmall] = useState(false);
     const handleSendMail = () => {
 	window.location.href = `mailto:ivtaks06@gmail.com`
@@ -72,22 +72,22 @@ function Body() {
                         <ul>
                             <li>
                                 <Button onClick={() => window.open('https://github.com/l1rn', "_blank", "noopener,noreferrer")}>
-                                    <FaGithub size={32} color={dark ? "#f8fafc" : "#0f172a"} />
+                                    <FaGithub size={32} color={theme === "dark" ? "#f8fafc" : "#0f172a"} />
                                 </Button>
                             </li>
                             <li>
                                 <Button onClick={() => window.open('https://www.linkedin.com/in/l1rn/', "_blank", "noopener,noreferrer")}>
-                                    <FaLinkedinIn size={32} color={dark ? "#f8fafc" : "#0f172a"} />
+                                    <FaLinkedinIn size={32} color={theme === "dark" ? "#f8fafc" : "#0f172a"} />
                                 </Button>
                             </li>
                             <li>
                                 <Button onClick={() => window.open('https://leetcode.com/u/l1rn/', "_blank", "noopener,noreferrer")}>
-                                    <SiLeetcode size={32}  color={dark ? "#f8fafc" : "#0f172a"} />
+                                    <SiLeetcode size={32} color={theme === "dark" ? "#f8fafc" : "#0f172a"} />
                                 </Button>
                             </li>
                             <li>
                                 <Button>
-                                    <FaEnvelope onClick={handleSendMail} size={32} color={dark ? "#f8fafc" : "#0f172a"} />
+                                    <FaEnvelope onClick={handleSendMail} size={32} color={theme === "dark" ? "#f8fafc" : "#0f172a"} />
                                 </Button>
                             </li>
                         </ul>

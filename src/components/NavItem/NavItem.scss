@@ -1,0 +1,51 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+$fs: 18px;
+
+@mixin flex-center-start {
+    display: flex;
+    align-items: center;
+}
+
+.nav-item-container{
+    padding: 0.5rem;
+    .picture-container{
+        display: flex;
+        gap: 10px;
+        .icon{
+            img{
+                width: 80px;
+                padding: 0.25rem;
+            }
+        }
+        .description{
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            > *{
+                @include flex-center-start;
+                font-size: $fs;
+                gap: 8px;
+                span {
+                    @include flex-center;
+                }
+            }
+            
+        }
+    }
+    .summary-container{
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        > *{
+            @include flex-center-start();
+            padding: 0.5rem;
+            border-radius: 8px;
+            gap: 8px;
+            font-size: $fs;
+        }
+    }
+}

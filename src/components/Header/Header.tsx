@@ -1,11 +1,11 @@
 import './Header.scss';
-import { useTheme } from "../../ThemeProvider";
 import Button from "../Button"
 import { FaCloudflare } from "react-icons/fa";
 import { Sun, Moon, FolderBookmark } from 'lucide-react'
+import { useTheme } from '../../ThemeContext';
 
 function Header() {
-    const { dark, toggleTheme } = useTheme();
+    const { theme, toggleTheme } = useTheme();
     return (
         <header>
             <div className="header-wrapper">
@@ -37,7 +37,7 @@ function Header() {
                 </div>
                 <div className='header-border'>
                     <Button onClick={toggleTheme}>
-                        { dark ? <Sun size={24} color='#f8fafc'/> : <Moon size={24}  /> }
+                        { theme === "dark" ? <Sun size={24} color='#f8fafc'/> : <Moon size={24}  /> }
                     </Button>
                 </div>
             </div>

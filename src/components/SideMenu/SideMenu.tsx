@@ -3,8 +3,11 @@ import { IoIosArrowBack } from "react-icons/io";
 import { toggleActivate} from "../../features/activeSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import NavMenu from "../NavMenu";
+import { useTheme } from "../../ThemeContext";
 
 function SideMenu() {
+    const { theme } = useTheme();
+    
     const isActive = useAppSelector((state) => state.active.isActive);
     const dispatch = useAppDispatch();
     
@@ -19,7 +22,7 @@ function SideMenu() {
                         className={`side-menu-button ${isActive ? 'active' : ''}`}
                     >
                         <span className="icon">
-                            <IoIosArrowBack />
+                            <IoIosArrowBack color={theme === "dark" ? "#f8fafc" : "#0f172a"}/>
                         </span>
                     </button>
                 </div>
